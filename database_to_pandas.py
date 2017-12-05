@@ -13,7 +13,7 @@ pd.set_option('display.max_colwidth',500)
 def generate_pdf(latexfile,
     pdf='output.pdf',
     dwld_dir='/home/restrepo/downloads',
-    url_dir='file:///home/restrepo/downloads'):
+    url_dir='file:///home/restrepo/downloads',id=None):
     """
     pdflatex upon latexfile to generate 'pdf'  file in 
     'dwld_dir' with browser link 'url_dir'
