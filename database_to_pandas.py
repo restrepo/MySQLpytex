@@ -46,13 +46,13 @@ class database_to_pandas(object):
     The optional aux_tables must be set to '' if not required, otherwise 
     'cartas_sign' is used
     """
-    def __init__(self,choose_db='Diego_Restrepo',main_table='cartas',id=None,
+    def __init__(self,host='localhost',user='root',choose_db='Diego_Restrepo',main_table='cartas',id=None,
                  aux_tables='cartas_sign',common_columns='signature',verbose=False):
         password=getpass.getpass()
         #TODO: read from config
         self.choose_db={choose_db:main_table}
         self.DataBase=choose_db
-        conn = pymysql.connect(host='localhost', port=3306, user='root', passwd=password, db=choose_db)
+        conn = pymysql.connect(host=host, port=3306, user=user, passwd=password, db=choose_db)
 
         df=pd.read_sql('select * from {};'.format(self.choose_db[choose_db]), con=conn)
 
