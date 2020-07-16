@@ -38,7 +38,7 @@ def generate_pdf(latexfile,
 
 class database_to_pandas(object):
     """
-    Convert Data Base  to pondas and filtered index to Series and 
+    Convert Data Base  to pandas and filtered index to Series and 
     define methods to use them.
     Intialize with choose_db and main_table to build attibute: choose_db[main_table]
     See for example:
@@ -63,6 +63,7 @@ class database_to_pandas(object):
 
         conn.close()
         self.pandas_DataFrame=df
+        self.pandas_signature=sg
         #print(df.shape[0])
         #return df,sg
         if df.shape[0]:
